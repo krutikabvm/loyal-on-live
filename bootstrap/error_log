@@ -1,0 +1,8 @@
+[24-Mar-2022 17:36:03 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Application' not found in /home/loyacaih/public_html/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/bootstrap/app.php on line 14
+[30-Mar-2022 04:53:29 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Application' not found in /home/loyacaih/public_html/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/bootstrap/app.php on line 14

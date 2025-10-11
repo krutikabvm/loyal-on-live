@@ -1,0 +1,8 @@
+[26-Mar-2022 04:12:04 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Tests\TestCase' not found in /home/loyacaih/public_html/tests/Feature/ExampleTest.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/tests/Feature/ExampleTest.php on line 8
+[02-Apr-2022 02:09:44 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Tests\TestCase' not found in /home/loyacaih/public_html/tests/Feature/ExampleTest.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/tests/Feature/ExampleTest.php on line 8

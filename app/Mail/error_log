@@ -1,0 +1,8 @@
+[03-Apr-2022 20:55:24 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Mail\Mailable' not found in /home/loyacaih/public_html/app/Mail/AdminSupportMail.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Mail/AdminSupportMail.php on line 10
+[08-Apr-2022 13:43:40 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Mail\Mailable' not found in /home/loyacaih/public_html/app/Mail/AdminSupportMail.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Mail/AdminSupportMail.php on line 10

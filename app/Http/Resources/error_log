@@ -1,0 +1,48 @@
+[09-Apr-2022 13:22:04 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Resources\Json\JsonResource' not found in /home/loyacaih/public_html/app/Http/Resources/Busniness.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Resources/Busniness.php on line 8
+[09-Apr-2022 13:24:05 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Resources\Json\JsonResource' not found in /home/loyacaih/public_html/app/Http/Resources/Busniness_details.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Resources/Busniness_details.php on line 7
+[09-Apr-2022 13:28:10 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Resources\Json\JsonResource' not found in /home/loyacaih/public_html/app/Http/Resources/Customer.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Resources/Customer.php on line 7
+[09-Apr-2022 16:57:02 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Resources\Json\JsonResource' not found in /home/loyacaih/public_html/app/Http/Resources/Customerloyalty.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Resources/Customerloyalty.php on line 12
+[09-Apr-2022 17:33:34 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Resources\Json\JsonResource' not found in /home/loyacaih/public_html/app/Http/Resources/loyaltyScheme.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Resources/loyaltyScheme.php on line 7
+[09-Apr-2022 18:26:01 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Resources\Json\JsonResource' not found in /home/loyacaih/public_html/app/Http/Resources/loyalty_location.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Resources/loyalty_location.php on line 7
+[10-Apr-2022 22:38:22 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Resources\Json\JsonResource' not found in /home/loyacaih/public_html/app/Http/Resources/Busniness.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Resources/Busniness.php on line 8
+[10-Apr-2022 23:48:26 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Resources\Json\JsonResource' not found in /home/loyacaih/public_html/app/Http/Resources/Busniness_details.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Resources/Busniness_details.php on line 7
+[11-Apr-2022 04:27:27 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Resources\Json\JsonResource' not found in /home/loyacaih/public_html/app/Http/Resources/Customer.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Resources/Customer.php on line 7
+[11-Apr-2022 04:46:55 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Resources\Json\JsonResource' not found in /home/loyacaih/public_html/app/Http/Resources/Customerloyalty.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Resources/Customerloyalty.php on line 12
+[11-Apr-2022 05:21:56 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Resources\Json\JsonResource' not found in /home/loyacaih/public_html/app/Http/Resources/loyaltyScheme.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Resources/loyaltyScheme.php on line 7
+[11-Apr-2022 07:37:28 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Http\Resources\Json\JsonResource' not found in /home/loyacaih/public_html/app/Http/Resources/loyalty_location.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Resources/loyalty_location.php on line 7

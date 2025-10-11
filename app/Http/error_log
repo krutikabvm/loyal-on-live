@@ -1,0 +1,8 @@
+[05-Apr-2022 21:18:34 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/loyacaih/public_html/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Kernel.php on line 7
+[08-Apr-2022 20:39:06 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/loyacaih/public_html/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Kernel.php on line 7

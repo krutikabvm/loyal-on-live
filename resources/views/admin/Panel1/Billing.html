@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"/>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link 
+  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>
+  <link rel="stylesheet" href="~/lib/Font-Awesome/css/fontawesome.min.css">
+  <link rel="stylesheet" href="~/lib/Font-Awesome/css/regular.min.css">
+  <link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css">
+<style>
+    .nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #FFFFFF;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color .15s ease-in-out,
+    background-color .15s ease-in-out,
+    border-color .15s ease-in-out;
+}
+a.nav-link.active {
+    /* margin-block-start: 10
+px
+; */
+background: white;
+    /* width: fit-content; */
+    border-radius: 4px;
+    color: rgb(78, 74, 74);
+}
+    .position-sticky.pt-2{
+        background-color: rgb(149, 145, 145);
+        border-radius: 2%;
+     height:650px;
+    }
+    .ProfileView{
+        width:fit-content;
+        height:fit-content;
+        
+    }
+    .nav-item{
+        color:white;
+        margin: 5px 10px 10px 5px ;
+    border-radius: 4px;
+    padding: 2px 2px 2px 2px;
+    
+    float: center;
+    }
+    .name{
+      font-weight: bold;
+      color: black;
+      display: inline-block;
+    }
+    .Acctyp{
+      color: skyblue;
+      display: inline-block;
+
+    }
+    .lc{
+      font-weight: bold;
+      color: black;
+      display: inline-block;
+    }
+    button.btn {
+    color: deeppink;
+    
+}
+    .stts{
+      font-weight: bold;
+      display: inline-block;
+      color: greenyellow;
+    }
+    .Ac{
+      font-weight: bold;
+      color: black;
+      display: inline-block;
+    }
+    .Cus{
+      font-weight: bold;
+      color: black;
+      display: inline-block;
+    }
+    #tlp{
+      display:inline;
+    }
+    .nav-item:hover{
+  
+    background-color: white;
+    /* width: fit-content; */
+   
+    color: rgb(78, 74, 74);
+    
+    }
+    button#profile:active {
+    color: white;
+    background-color: deeppink;
+    border: none;
+
+}
+.Header{
+    width:100%;
+    height:100px;
+    background-image: url("/home/brownmunda/Desktop/AdminPanel/123.jpeg");
+
+}
+.d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom {
+    background-color: white;
+    margin: 15px;
+    border-radius: 5px;
+    box-shadow: black;
+}
+.ptext{
+  font-size:14px;
+}
+.pimg{
+  border-radius:50%;
+  width:150px;
+  height:150px;
+}
+input.form-control.col-sm-2 {
+    border-radius: 24px;
+    width: 338px;
+    border: 1px black solid;
+    border-color: #c3bdbd;
+    margin: 10px;
+}
+    button#profile{
+        border-top-left-radius: 34px;
+    border-bottom-left-radius: 34px;
+    color: black;
+    width: 107px;
+    background-color: white;
+    height: 49px;
+}
+button#pprofile{
+        
+    color: white;
+    width: fit-content;
+     
+    background-color: blue;
+    height: fit-content;
+    font-size: 8px;
+}
+button#pprofile:hover{
+        
+        color: white;
+       
+        background-color: blue;
+        
+    }
+    button#pprofile:focus{
+        
+        color: white;
+    
+        background-color: blue;
+     
+    }
+    button#rReviews{
+        color: black;
+    width: fit-content;
+    background-color: white;
+    height: fit-content;
+    font-size: 8px;
+       
+    }
+    button#rReviews:hover{
+            
+            color: white;
+        
+            background-color: blue;
+         
+        }
+        button#rReviews:focus{
+            
+            color: white;
+           
+            background-color: blue;
+           
+        }
+.logo {
+    text-align: center;
+    border-bottom: 1px black;
+    padding: 20px;
+    color: White;
+    font-weight: initial;
+    font-size: 20px;
+    margin: 0px 30px 3px 34px;
+}
+.ttl{
+  display: inline-block;
+}
+button#profile:hover{
+color:white;
+background-color: deeppink;
+border: none;
+}
+button#Reviews{
+    border-top-right-radius: 34px;
+    border-bottom-right-radius: 34px;
+    color: black;
+    background-color: white;
+    width: 107px;
+    height: 49px;
+
+}
+#prow{
+  margin-top:18px;
+}
+.paid{
+  color:greenyellow;
+}
+button#profile:hover{
+color:white;
+background-color: deeppink;
+border: none;
+}
+button#Reviews:hover{
+    color:white;
+background-color: deeppink;
+border: none;
+}
+button#Reviews:active{
+    color:white;
+background-color: deeppink;
+border: none;
+}
+button#profile:active {
+    color: white;
+    background-color: deeppink;
+    border: none;
+}
+button#profile:focus {
+    color: white;
+    background-color: deeppink;
+    user-select: none;
+    border: none;
+}
+.form-outline {
+  /* This bit sets up the horizontal layout */
+  display:flex;
+  flex-direction:row;
+  
+  /* This bit draws the box around it */
+  border:1px solid black;
+  width:400px;
+  border-radius: 34px;
+  /* I've used padding so you can see the edges of the elements. */
+  padding:2px;
+  margin-left:5px;
+}
+
+body{
+  background-color: rgb(251, 249, 249);
+}
+.form-control {
+  /* Tell the input to use all the available space */
+  flex-grow:2;
+  /* And hide the input's outline, so the form looks like the outline */
+  border:none;
+}
+ul.card-text:last-child  {
+    font-size: 15px;
+    margin: 20px 10px 5px 10px;
+    list-style-type:none;
+    text-align: left;
+}
+a.btn.btn-primary {
+    
+    /* background-position-x: center; */
+    margin-top: 58px;
+    background-color: white;
+    color: #4e4a4a;
+    border-color:   rgb(78, 74, 74);;
+  
+  
+}
+a.btn.btn-primary:hover {
+  
+    background-color: deeppink;
+    color: white;
+    border: deeppink;
+    border-radius: 14px;
+
+}
+.plogo{
+ width:30px;
+  height:30px;
+ margin:0px 0px 0px 0px;
+  box-sizing: content-box;
+  border-radius:50%;
+}
+.card.text-center {
+    margin: 20px;
+}
+.form-control:focus {
+  /* removing the input focus blue box. Put this on the form if you like. */
+  outline: none;
+}
+.xd{
+    display: inline;
+}
+
+.fltr {
+  /* Just a little styling to make it pretty */
+  border:1px solid blue;
+  background:blue;
+  color:white;
+}
+.info{
+    text-align: left;
+    float: left;
+}
+.btn-primary {
+    color: #fff;
+    /* background-color: #0d6efd; */
+    border-color: #f90dfd;
+    color: #f90dfd;
+}
+.Header  .fa.fa-edit {
+    /* bottom: 54
+px
+; */
+    top: 150px;
+    /* float: right; */
+    /* display: flex; */
+    right: 28px;
+    padding:2px;
+    background-color: deeppink;
+    color:white;
+    position: absolute;
+    right: 16px;
+}
+button#dropdownMenuButton {
+    height: fit-content;
+    width: fit-content;
+    font-size: 6px;
+    display: inline;
+    background-color: white;
+    color: black;
+}
+.scope {
+    border-bottom: 1px #0000001f solid;
+    padding-bottom: 6px;
+}
+
+.info  .fa.fa-edit {
+    /* bottom: 54
+px
+; */
+    top: 96px;
+    /* float: right; */
+    /* display: flex; */
+    right: 28px;
+    padding:2px;
+    background-color: deeppink;
+    color:white;
+    position: absolute;
+    right: 16px;
+}
+button.btn.btn-outline {
+    margin: 12px 0px 0px 0px;
+    border: 2px deeppink solid;
+}
+img.fb {
+    width: 50px;
+    height: 50px;
+    color: #5959fb;
+}
+img.insta {
+    width: 50px;
+    height: 50px;
+    color: deeppink;
+}
+.profile i.fa.fa-edit {
+    /* bottom: 54
+px
+; */
+    top: 47px;
+    /* float: right; */
+    /* display: flex; */
+    right: 28px;
+    border-radius: 50%;
+    padding:2px;
+    background-color: deeppink;
+    color:white;
+    position: absolute;
+    right: -1px;
+}
+.ProfileView .profile{
+    border-radius: 50%;
+    background-image: url(/home/brownmunda/Desktop/AdminPanel/123.jpeg);
+    width:90px;
+    height:83px;
+    position: absolute;
+    bottom: 188px;
+    right: 347px;
+    border: 1px solid rgba(10, 10, 10, 0.212);
+}
+.title .profile{
+    border-radius: 50%;
+    background-image: url(/home/brownmunda/Desktop/AdminPanel/123.jpeg);
+    width:40px;
+    height:40px;
+ 
+    border: 1px solid rgba(10, 10, 10, 0.212);
+}
+.mainstar{
+
+
+border-radius: 10px;
+position: relative;
+margin-top: 10px;
+  flex: 1 1 auto;
+
+  padding: 1rem;
+}
+
+
+@media only screen and (max-width: 767px) {
+.rps {margin:100px 300px 100px 300px;}
+.rfs{width:fit-content;}
+
+   .mainstar{
+margin-top: 10px;
+    height: max-content;
+width: max-content;
+border-radius: 10px;
+}
+.position-sticky.pt-2{
+      position: absolute;
+      width: auto;
+left: 19px;
+top: 19px;
+
+background: #7E8190;
+border-radius: 12px;
+  }
+}
+@media only screen and (max-width: 967px) {
+.rps {margin:100px 300px 100px 300px;}
+.rfs{width:fit-content;}
+
+.mainstar{
+margin-top: 10px;
+    height: max-content;
+width: max-content;
+border-radius: 10px;
+}
+.position-sticky.pt-2{
+      position: absolute;
+      width: auto;
+left: 19px;
+top: 19px;
+
+background: #7E8190;
+border-radius: 12px;
+  }
+  }
+</style>
+</head>
+<body>
+
+
+    <div class="container-fluid">
+<div class="mainstar">
+        <div class="row">
+            <!----Sidebar code start-->
+          <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar  mt-1 mr-2">
+            <div class="position-sticky pt-2">
+               <div class="logo">logo</div>
+               <ul class="nav flex-column">
+                <li class="nav-item active">
+                  <a class="nav-link active " aria-current="page" href="Admin1.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    Business
+                    
+                  </a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link " href="Customers.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                    Customers
+                  </a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="PushNotifications.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    Push Notifications
+                  </a>
+                </li>
+                <li class="nav-item">
+                    
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                
+                        Settings
+                    
+                    
+                  </li>
+                  <li>
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      <li class="nav-item "><a href="Setting1.html" class="nav-link  link-dark rounded">Account/T&C'S</a></li>
+                      <li class="nav-item "><a href="Settings2.html" class="nav-link link-dark rounded">Edit Plans</a></li>
+
+                    </ul>
+                  </li>
+              </ul>
+            </div>
+
+          </nav>
+        <!----Sidebar code end-->
+
+          <!----Upper header code start-->
+          <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+              
+            <div class="chartjs-size-monitor">
+                <div class="chartjs-size-monitor-expand">
+                    <div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+             
+                 <div  id="tlp">  
+                  <input class="form-control col-sm-2" class="lp" type="search" placeholder="Search" aria-label="Search">
+                </div> 
+              <div  id="tlp">
+                <button class="btn" ><i class="fa fa-sign-out" style="color: deeppink; "></i> Logout</button>
+              </div>
+             
+              
+              
+            </div>
+      <div class='d-flex justify-content-center'>
+<div class="col-sm-3" style="float: inline-start;">
+    <i class="fa fa-arrow-left"></i>
+    <button type="button" class="btn" style="color: black;"></i>Back</button>
+                  
+</div>
+  <!----upper header code end-->
+    <!----Switchbuttons code start-->
+<div class='col-sm-6'>
+            <div class="btn-group p-2" style="margin-left: 70px;">
+                <button type="button" class="btn btn-sm btn-outline-secondary" id="profile" >Profiles</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary " id="Reviews">Reviews</button>
+              </div>
+            </div>
+
+              <div class='col-sm-3' style="float: inline-end;">
+                <button type="button" class="btn btn-outline" style="margin-left: 109px; color:yellow; background-color: white; border: 1px yellow solid;">Cancel Account</button>
+                       
+              </div>
+            </div>
+    <!----Switchbuttons code end-->
+
+    <div class="row">                
+      
+        <div class="card text-center">
+            <div class="card-head" style="height: fit-content; font-size: 20px; text-align: left; font-weight: 700; border-bottom:  1px rgba(255, 7, 7, 0.253)  ;">
+                Billing
+           
+            </div>
+            <div class="card-body">
+                <table class="table ">
+                    
+                    <tbody>
+                      <tr>
+                        <th scope="row" class="paid" >
+                          
+                          <i class="fas fa-check" style="margin-right:10px;">
+
+                          </i>Paid</th>
+                        <td>1 feb 2O12</td>
+                        <td>564$</td>
+                       
+                      </tr>
+                      <tr>
+                        <th scope="row" class="paid" >
+                          <i class="fas fa-check" style="margin-right:10px;"></i>
+                            Paid</th>
+                        <td>1 feb 2O12</td>
+                        <td>564$</td>
+                       
+                      </tr>
+                      <tr>
+                        <th scope="row" class="paid" >
+                          <i class="fas fa-check" style="margin-right:10px;">
+</i>
+                          Paid</th>
+                        <td>1 feb 2O12</td>
+                        <td>564$</td>
+                        
+                      </tr>
+                    </tbody>
+                  </table>
+           
+                   </div>
+
+          </div>
+       <div class="row">
+                
+   
+    
+           
+        <div class="card text-center">
+            
+       
+
+     </div>
+
+   </div>
+       </div>
+           
+       
+          </main>
+        </div>
+      </div>
+      </div>
+
+<script>
+   
+</script>
+
+</body>
+</html>

@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #FFFFFF;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color .15s ease-in-out,
+    background-color .15s ease-in-out,
+    border-color .15s ease-in-out;
+}
+a.nav-link.active {
+    /* margin-block-start: 10
+px
+; */
+background: white;
+    /* width: fit-content; */
+    border-radius: 4px;
+    color: rgb(78, 74, 74);
+}
+    .position-sticky.pt-2{
+        background-color: rgb(149, 145, 145);
+        border-radius: 2%;
+     height:650px;
+    }
+    .nav-item{
+        color:white;
+        margin: 5px 10px 10px 5px ;
+    border-radius: 4px;
+    padding: 2px 2px 2px 2px;
+    
+    float: center;
+    }
+    .name{
+      font-weight: bold;
+      color: black;
+      display: inline-block;
+    }
+    .Acctyp{
+      color: skyblue;
+      display: inline-block;
+
+    }
+    .lc{
+      font-weight: bold;
+      color: black;
+      display: inline-block;
+    }
+    button.btn {
+    color: deeppink;
+    
+}
+    .stts{
+      font-weight: bold;
+      display: inline-block;
+      color: greenyellow;
+    }
+    .Ac{
+      font-weight: bold;
+      color: black;
+      display: inline-block;
+    }
+    .Cus{
+      font-weight: bold;
+      color: black;
+      display: inline-block;
+    }
+    #tlp{
+      display:inline;
+    }
+    .nav-item:hover{
+  
+    background-color: white;
+    /* width: fit-content; */
+   
+    color: rgb(78, 74, 74);
+    
+    }
+    button#profile:active {
+    color: white;
+    background-color: deeppink;
+    border: none;
+
+}
+
+.d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom {
+    background-color: white;
+    margin: 15px;
+    border-radius: 5px;
+    box-shadow: black;
+}
+.ptext{
+  font-size:14px;
+}
+.pimg{
+  border-radius:50%;
+  width:150px;
+  height:150px;
+}
+input.form-control.col-sm-2 {
+    border-radius: 24px;
+    width: 338px;
+    border: 1px black solid;
+    border-color: #c3bdbd;
+    margin: 10px;
+}
+    button#profile{
+        border-top-left-radius: 34px;
+    border-bottom-left-radius: 34px;
+    color: black;
+    width: 107px;
+    background-color: white;
+    height: 49px;
+}
+.logo {
+    text-align: center;
+    border-bottom: 1px black;
+    padding: 20px;
+    color: White;
+    font-weight: initial;
+    font-size: 20px;
+    margin: 0px 30px 3px 34px;
+}
+.ttl{
+  display: inline-block;
+}
+button#profile:hover{
+color:white;
+background-color: deeppink;
+border: none;
+}
+button#Reviews{
+    border-top-right-radius: 34px;
+    border-bottom-right-radius: 34px;
+    color: black;
+    background-color: white;
+    width: 107px;
+    height: 49px;
+
+}
+#prow{
+  margin-top:58px;
+}
+button#profile:hover{
+color:white;
+background-color: deeppink;
+border: none;
+}
+button#Reviews:hover{
+    color:white;
+background-color: deeppink;
+border: none;
+}
+button#Reviews:focus{
+    color:white;
+background-color: deeppink;
+border: none;
+}
+button#profile:active {
+    color: white;
+    background-color: deeppink;
+    border: none;
+}
+button#profile:focus {
+    color: white;
+    background-color: deeppink;
+    user-select: none;
+    border: none;
+}
+.form-outline {
+  /* This bit sets up the horizontal layout */
+  display:flex;
+  flex-direction:row;
+  
+  /* This bit draws the box around it */
+  border:1px solid black;
+  width:400px;
+  border-radius: 34px;
+  /* I've used padding so you can see the edges of the elements. */
+  padding:2px;
+  margin-left:5px;
+}
+
+body{
+  background-color: rgb(251, 249, 249);
+}
+.form-control {
+  /* Tell the input to use all the available space */
+  flex-grow:2;
+  /* And hide the input's outline, so the form looks like the outline */
+  border:none;
+}
+ul.card-text:last-child  {
+    font-size: 15px;
+    margin: 20px 10px 5px 10px;
+    list-style-type:none;
+    text-align: left;
+}
+a.btn.btn-primary {
+    
+    /* background-position-x: center; */
+    margin-top: 58px;
+    background-color: white;
+    color: #4e4a4a;
+    border-color:   rgb(78, 74, 74);;
+  
+  
+}
+a.btn.btn-primary:hover {
+  
+    background-color: deeppink;
+    color: white;
+    border: deeppink;
+    border-radius: 14px;
+
+}
+.plogo{
+ width:30px;
+  height:30px;
+ margin:0px 0px 0px 0px;
+  box-sizing: content-box;
+  border-radius:50%;
+}
+.card.text-center {
+    margin: 20px;
+}
+.form-control:focus {
+  /* removing the input focus blue box. Put this on the form if you like. */
+  outline: none;
+}
+
+.fltr {
+  /* Just a little styling to make it pretty */
+  border:1px solid blue;
+  background:blue;
+  color:white;
+}
+.btn-primary {
+    color: #fff;
+    /* background-color: #0d6efd; */
+    border-color: #f90dfd;
+    color: #f90dfd;
+}
+.mainstar{
+
+
+border-radius: 10px;
+position: relative;
+margin-top: 10px;
+  flex: 1 1 auto;
+
+  padding: 1rem;
+}
+
+
+@media only screen and (max-width: 767px) {
+.rps {margin:100px 300px 100px 300px;}
+.rfs{width:fit-content;}
+
+   .mainstar{
+margin-top: 10px;
+    height: max-content;
+width: max-content;
+border-radius: 10px;
+}
+.position-sticky.pt-2{
+      position: absolute;
+      width: auto;
+left: 19px;
+top: 19px;
+
+background: #7E8190;
+border-radius: 12px;
+  }
+}
+@media only screen and (max-width: 967px) {
+.rps {margin:100px 300px 100px 300px;}
+.rfs{width:fit-content;}
+
+.mainstar{
+margin-top: 10px;
+    height: max-content;
+width: max-content;
+border-radius: 10px;
+}
+.position-sticky.pt-2{
+      position: absolute;
+      width: auto;
+left: 19px;
+top: 19px;
+
+background: #7E8190;
+border-radius: 12px;
+  }
+  }
+</style>
+</head>
+<body>
+
+
+    <div class="container-fluid">
+      <div class="mainstar">
+        <div class="row">
+          <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar  mt-1 mr-2">
+            <div class="position-sticky pt-2">
+               <div class="logo">logo</div>
+               <ul class="nav flex-column">
+                <li class="nav-item ">
+                  <a class="nav-link active" aria-current="page" href="Admin1.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    Business
+                    
+                  </a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link " href="Customers.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                    Customers
+                  </a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link " href="PushNotifications.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    Push Notifications
+                  </a>
+                </li>
+                <li class="nav-item">
+                    
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                
+                        Settings
+                    
+                    
+                  </li>
+                  <li>
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                      <li class="nav-item "><a href="Setting1.html" class="nav-link  link-dark rounded">Account/T&C'S</a></li>
+                      <li class="nav-item "><a href="Settings2.html" class="nav-link link-dark rounded">Edit Plans</a></li>
+
+                    </ul>
+                  </li>
+              </ul>
+            </div>
+
+          </nav>
+      
+          <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+             
+                <div  id="tlp">  
+                  <input class="form-control col-sm-2" class="lp" type="search" placeholder="Search" aria-label="Search">
+                </div>
+              <div  id="tlp">
+                <button class="btn" ><i class="fa fa-sign-out"></i> Logout</button>
+              </div>
+             
+              
+              
+            </div>
+            
+      <div class='d-flex justify-content-center'>
+
+        <div class="btn-group p-2">
+          <button  type="button" class="profile btn btn-sm btn-outline-secondary  " onclick="window.location.href='Admin1.html';" id="" >Profiles</button>
+          <button type="button" class=" btn btn-sm btn-outline-secondary active" onclick="window.location.href='Reviews.html';" id="Reviews"></button>
+        </div>
+            </div>
+            <div class="card text-center">
+              <div class="card-body">
+                <div class="row">
+                <div class="col-sm-2"> <img class="pimg" src="/home/brownmunda/Desktop/AdminPanel/123.jpeg" class="rounded" alt="Cinque Terre">
+                </div>
+                <div class="col-sm-5">
+                  <ul class="card-text">
+<li><div class="ttl">Name:</div>  <div class="name">Coffee Elite</div></li>
+<li> <div class="ttl">Account Type:</div>  <div class="Acctyp">Premium</div></li>
+<li> <div class="ttl"> Loyalty Cards:</div> <div class="lc">X</div></li>
+<li> <div class="ttl">Status:</div>  <div class="stts">Pending</div></li>
+<li> <div class="ttl">Account Created:</div>  <div class="Ac">XX/XX/XX</div></li>
+<li> <div class="ttl">Customers:</div>  <div class="Cus"></div>X</li>
+                  </ul>
+                </div>
+                <div class="col-sm-3">
+                  <div class="row" id="prow" style="display: none;">
+               Platform: 
+                 <img class="plogo" src="/home/brownmunda/Desktop/AdminPanel/android-logo-png-transparent.png">
+                  </img>
+                  <img class="plogo" src="/home/brownmunda/Desktop/AdminPanel/download.png">
+                  </img>
+                 
+                  </div>
+                  
+                </div>
+                <div class="col-sm-2">  
+                  
+                  <a href="#" class="btn btn-primary">View Profile</a>
+                </div>
+              </div>
+             
+                     </div>
+  
+            </div>
+            <div class="card text-center">
+              <div class="card-body">
+                <div class="row">
+                <div class="col-sm-2"> <img class="pimg" src="/home/brownmunda/Desktop/AdminPanel/123.jpeg" class="rounded" alt="Cinque Terre">
+                </div>
+                <div class="col-sm-5">
+                  <ul class="card-text">
+<li><div class="ttl">Name:</div>  <div class="name">Coffee Elite</div></li>
+<li> <div class="ttl">Account Type:</div>  <div class="Acctyp">Premium</div></li>
+<li> <div class="ttl"> Loyalty Cards:</div> <div class="lc">X</div></li>
+<li> <div class="ttl">Status:</div>  <div class="stts">Pending</div></li>
+<li> <div class="ttl">Account Created:</div>  <div class="Ac">XX/XX/XX</div></li>
+<li> <div class="ttl">Customers:</div>  <div class="Cus"></div>X</li>
+                  </ul>
+                </div>
+                <div class="col-sm-3">
+                  <div class="row" id="prow" style="display: none;">
+               Platform: 
+                 <img class="plogo" src="/home/brownmunda/Desktop/AdminPanel/android-logo-png-transparent.png">
+                  </img>
+                  <img class="plogo" src="/home/brownmunda/Desktop/AdminPanel/download.png">
+                  </img>
+                 
+                  </div>
+                  
+                </div>
+                <div class="col-sm-2">  
+                  
+                  <a href="#" class="btn btn-primary">View Profile</a>
+                </div>
+              </div>
+             
+                     </div>
+  
+            </div>
+            <div class="card text-center">
+              <div class="card-body">
+                <div class="row">
+                <div class="col-sm-2"> <img class="pimg" src="/home/brownmunda/Desktop/AdminPanel/123.jpeg" class="rounded" alt="Cinque Terre">
+                </div>
+                <div class="col-sm-5">
+                  <ul class="card-text">
+<li><div class="ttl">Name:</div>  <div class="name">Coffee Elite</div></li>
+<li> <div class="ttl">Account Type:</div>  <div class="Acctyp">Premium</div></li>
+<li> <div class="ttl"> Loyalty Cards:</div> <div class="lc">X</div></li>
+<li> <div class="ttl">Status:</div>  <div class="stts">Pending</div></li>
+<li> <div class="ttl">Account Created:</div>  <div class="Ac">XX/XX/XX</div></li>
+<li> <div class="ttl">Customers:</div>  <div class="Cus"></div>X</li>
+                  </ul>
+                </div>
+                <div class="col-sm-3">
+                  <div class="row" id="prow" style="display: none;">
+               Platform: 
+                 <img class="plogo" src="/home/brownmunda/Desktop/AdminPanel/android-logo-png-transparent.png">
+                  </img>
+                  <img class="plogo" src="/home/brownmunda/Desktop/AdminPanel/download.png">
+                  </img>
+                 
+                  </div>
+                  
+                </div>
+                <div class="col-sm-2">  
+                  
+                  <a href="#" class="btn btn-primary">View Profile</a>
+                </div>
+              </div>
+             
+                     </div>
+  
+            </div>
+           
+       
+          </main>
+        </div>
+        </div>
+      </div>
+
+<!-- <div class="sidebar" style="float:left;">
+    <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" style="width: 280px;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+          <span class="fs-4">Sidebar</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link Pnding" aria-current="page">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link link-dark">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link link-dark">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+              Orders
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link link-dark">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+              Products
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link link-dark">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+              Customers
+            </a>
+          </li>
+        </ul>
+        <hr>
+        <div class="dropdown">
+          <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+            <strong>mdo</strong>
+          </a>
+          <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+        
+      </div>
+   
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              <h1 class="h2">Dashboard</h1>
+              <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group me-2">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  This week
+                </button>
+              </div>
+            </div>
+      
+            <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="1078" height="455" style="display: block; width: 1078px; height: 455px;"></canvas>
+      
+            <h2>Section title</h2>
+            <div class="table-responsive">
+              <table class="table table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Header</th>
+                    <th scope="col">Header</th>
+                    <th scope="col">Header</th>
+                    <th scope="col">Header</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1,001</td>
+                    <td>random</td>
+                    <td>data</td>
+                    <td>placeholder</td>
+                    <td>text</td>
+                  </tr>
+                  <tr>
+                    <td>1,002</td>
+                    <td>placeholder</td>
+                    <td>irrelevant</td>
+                    <td>visual</td>
+                    <td>layout</td>
+                  </tr>
+                  <tr>
+                    <td>1,003</td>
+                    <td>data</td>
+                    <td>rich</td>
+                    <td>dashboard</td>
+                    <td>tabular</td>
+                  </tr>
+                  <tr>
+                    <td>1,003</td>
+                    <td>information</td>
+                    <td>placeholder</td>
+                    <td>illustrative</td>
+                    <td>data</td>
+                  </tr>
+                  <tr>
+                    <td>1,004</td>
+                    <td>text</td>
+                    <td>random</td>
+                    <td>layout</td>
+                    <td>dashboard</td>
+                  </tr>
+                  <tr>
+                    <td>1,005</td>
+                    <td>dashboard</td>
+                    <td>irrelevant</td>
+                    <td>text</td>
+                    <td>placeholder</td>
+                  </tr>
+                  <tr>
+                    <td>1,006</td>
+                    <td>dashboard</td>
+                    <td>illustrative</td>
+                    <td>rich</td>
+                    <td>data</td>
+                  </tr>
+                  <tr>
+                    <td>1,007</td>
+                    <td>placeholder</td>
+                    <td>tabular</td>
+                    <td>information</td>
+                    <td>irrelevant</td>
+                  </tr>
+                  <tr>
+                    <td>1,008</td>
+                    <td>random</td>
+                    <td>data</td>
+                    <td>placeholder</td>
+                    <td>text</td>
+                  </tr>
+                  <tr>
+                    <td>1,009</td>
+                    <td>placeholder</td>
+                    <td>irrelevant</td>
+                    <td>visual</td>
+                    <td>layout</td>
+                  </tr>
+                  <tr>
+                    <td>1,010</td>
+                    <td>data</td>
+                    <td>rich</td>
+                    <td>dashboard</td>
+                    <td>tabular</td>
+                  </tr>
+                  <tr>
+                    <td>1,011</td>
+                    <td>information</td>
+                    <td>placeholder</td>
+                    <td>illustrative</td>
+                    <td>data</td>
+                  </tr>
+                  <tr>
+                    <td>1,012</td>
+                    <td>text</td>
+                    <td>placeholder</td>
+                    <td>layout</td>
+                    <td>dashboard</td>
+                  </tr>
+                  <tr>
+                    <td>1,013</td>
+                    <td>dashboard</td>
+                    <td>irrelevant</td>
+                    <td>text</td>
+                    <td>visual</td>
+                  </tr>
+                  <tr>
+                    <td>1,014</td>
+                    <td>dashboard</td>
+                    <td>illustrative</td>
+                    <td>rich</td>
+                    <td>data</td>
+                  </tr>
+                  <tr>
+                    <td>1,015</td>
+                    <td>random</td>
+                    <td>tabular</td>
+                    <td>information</td>
+                    <td>text</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </main>
+</div>
+ -->
+
+><script>
+  function funx() {
+
+    document.body.style.color = "purple";
+}
+</script>
+</body>
+</html>

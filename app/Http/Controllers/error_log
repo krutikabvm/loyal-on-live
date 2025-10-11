@@ -1,0 +1,16 @@
+[08-Apr-2022 07:51:43 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Routing\Controller' not found in /home/loyacaih/public_html/app/Http/Controllers/Controller.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Controllers/Controller.php on line 10
+[08-Apr-2022 07:58:13 America/New_York] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/loyacaih/public_html/app/Http/Controllers/ForgetController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Controllers/ForgetController.php on line 14
+[09-Apr-2022 22:12:17 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Routing\Controller' not found in /home/loyacaih/public_html/app/Http/Controllers/Controller.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Controllers/Controller.php on line 10
+[10-Apr-2022 08:19:15 America/New_York] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/loyacaih/public_html/app/Http/Controllers/ForgetController.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Controllers/ForgetController.php on line 14

@@ -1,0 +1,32 @@
+[28-Feb-2022 02:02:58 America/New_York] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/ktectqna/loyaliom.ktechclans.com/app/Http/Controllers/Web/BusinessController.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/ktectqna/loyaliom.ktechclans.com/app/Http/Controllers/Web/BusinessController.php on line 16
+[28-Feb-2022 02:03:00 America/New_York] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/ktectqna/loyaliom.ktechclans.com/app/Http/Controllers/Web/BusinessController.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/ktectqna/loyaliom.ktechclans.com/app/Http/Controllers/Web/BusinessController.php on line 16
+[28-Feb-2022 02:03:05 America/New_York] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/ktectqna/loyaliom.ktechclans.com/app/Http/Controllers/Web/BusinessController.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/ktectqna/loyaliom.ktechclans.com/app/Http/Controllers/Web/BusinessController.php on line 16
+[28-Feb-2022 02:03:26 America/New_York] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/ktectqna/loyaliom.ktechclans.com/app/Http/Controllers/Web/BusinessDashboardController.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/ktectqna/loyaliom.ktechclans.com/app/Http/Controllers/Web/BusinessDashboardController.php on line 19
+[08-Apr-2022 21:55:18 America/New_York] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/loyacaih/public_html/app/Http/Controllers/Web/BusinessController.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Controllers/Web/BusinessController.php on line 19
+[08-Apr-2022 22:26:19 America/New_York] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/loyacaih/public_html/app/Http/Controllers/Web/BusinessDashboardController.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Controllers/Web/BusinessDashboardController.php on line 19
+[10-Apr-2022 14:29:32 America/New_York] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/loyacaih/public_html/app/Http/Controllers/Web/BusinessController.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Controllers/Web/BusinessController.php on line 19
+[10-Apr-2022 15:11:08 America/New_York] PHP Fatal error:  Uncaught Error: Class 'App\Http\Controllers\Controller' not found in /home/loyacaih/public_html/app/Http/Controllers/Web/BusinessDashboardController.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Http/Controllers/Web/BusinessDashboardController.php on line 19

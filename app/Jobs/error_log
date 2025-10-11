@@ -1,0 +1,8 @@
+[03-Apr-2022 17:36:22 America/New_York] PHP Fatal error:  Uncaught Error: Interface 'Illuminate\Contracts\Queue\ShouldQueue' not found in /home/loyacaih/public_html/app/Jobs/SendEmailJob.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Jobs/SendEmailJob.php on line 13
+[08-Apr-2022 10:39:03 America/New_York] PHP Fatal error:  Uncaught Error: Interface 'Illuminate\Contracts\Queue\ShouldQueue' not found in /home/loyacaih/public_html/app/Jobs/SendEmailJob.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Jobs/SendEmailJob.php on line 13

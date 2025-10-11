@@ -1,0 +1,8 @@
+[29-Mar-2022 06:29:22 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/loyacaih/public_html/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Exceptions/Handler.php on line 8
+[04-Apr-2022 17:20:42 America/New_York] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/loyacaih/public_html/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/loyacaih/public_html/app/Exceptions/Handler.php on line 8
