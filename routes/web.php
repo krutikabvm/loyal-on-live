@@ -134,6 +134,10 @@ Route::prefix('admin')->group(function () {
     Route::middleware('adminweb')->group(function () {
         Route::get("business", "Admin\AdminDashboardController@business")->name("admin.business");
         Route::get("business_details/{id}", "Admin\AdminDashboardController@business_details")->name("admin.business_details");
+
+        Route::get('business/deal',"Admin\AdminDashboardController@limited_time_perk")->name("admin.business.deal");
+        Route::post('/update-loyalty-dashboard', "Admin\AdminDashboardController@updateLoyaltyDashboard");
+        
         Route::get("logout", "Admin\AdminDashboardController@logout")->name("admin.logout");
         Route::post("upload-image", "Admin\AdminDashboardController@uploadImages")->name("upload-image");
         Route::get("business-billing", "Admin\AdminDashboardController@billing")->name("business-billing");
@@ -142,6 +146,23 @@ Route::prefix('admin')->group(function () {
         Route::get("cancel_account/{id}", "Admin\AdminDashboardController@cancel_account")->name("admin.cancel_account");
         Route::get("reactivate_account/{id}", "Admin\AdminDashboardController@reactivate_account")->name("admin.reactivate_account");
         Route::get("loyality_card_insights/{id}", "Admin\AdminDashboardController@loyality_card_insights")->name("admin.loyality_card_insights");
+
+        Route::get("limited_time_perk","Admin\AdminDashboardController@create_limited_time_perk")->name('admin.create_limited_time_perk');
+
+        Route::post('limited-time-perk-store', "Admin\AdminDashboardController@store_limited_time_perk")->name('limited_time_perk.store');
+        Route::post("limited-perk/{id}/update","Admin\AdminDashboardController@update_limited_perk")->name('limited_perk.update');
+
+        Route::get("perk-portal","Admin\AdminDashboardController@perk_portal")->name('admin.perks-portal');
+        Route::post('/perks/end', "Admin\AdminDashboardController@end")->name('perks.end');
+
+        Route::get('fetch-perk-data/{id}', "Admin\AdminDashboardController@fetchData")->name('admin.fetch.perks_data');
+
+
+        Route::get("ongoing_perk","Admin\AdminDashboardController@create_ongoing_perk")->name('admin.create_ongoing_perk');
+        Route::get("ongoing-perk/{id}/edit","Admin\AdminDashboardController@edit_ongoing_perk")->name('admin.edit_ongoing_perk');
+        Route::post("ongoing-perk/{id}/update","Admin\AdminDashboardController@update_ongoing_perk")->name('ongoing_perk.update');
+
+        Route::post('ongoing_perk-store', "Admin\AdminDashboardController@store_ongoing_perk")->name('ongoing_perk.store');
 
         Route::get("customers", "Admin\AdminDashboardController@customers")->name("admin.customers");
         Route::get("customer_details/{id}", "Admin\AdminDashboardController@customer_details")->name("admin.customer_details");
@@ -162,6 +183,13 @@ Route::prefix('admin')->group(function () {
         Route::post("update_settings", "Admin\AdminDashboardController@update_settings")->name("admin.update_settings");
         Route::post("update_settings", "Admin\AdminDashboardController@update_settings")->name("admin.update_settings");
         Route::post("update_business_data", "Admin\AdminDashboardController@update_business_data")->name("admin.update_business_data");
+
+        route::get("ads_banner", "Admin\AdBannerController@index")->name("ads.index");
+        route::get("ads_banner/create", "Admin\AdBannerController@create")->name("ads.create");
+        route::post("ads_banner/store", "Admin\AdBannerController@store")->name("ads_banner.store");
+        Route::get('ads_banner/edit/{id}', "Admin\AdBannerController@edit")->name('ads_banner.edit');
+        Route::put('ads_banner/{id}',  "Admin\AdBannerController@update")->name('ads_banner.update');
+        Route::get('ads_banner/delete/{id}',  "Admin\AdBannerController@destroy")->name('ads_banner.delete');
 
     });
 });

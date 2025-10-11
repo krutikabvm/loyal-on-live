@@ -73,6 +73,15 @@ Route::prefix('admin')->group(function () {
         Route::post('customer/{id}', "Api\Admin\CustomerController@update");
 
     });
+    Route::post("perk-portal", "Api\Admin\BusinessController@get_all_perks_data");
+    Route::get("perk-portal/{id}", "Api\Admin\BusinessController@get_perk_data");
+    Route::post("create/limited-perk", "Api\Admin\BusinessController@create_limited_perk");
+    Route::post("create/ongoing-perk", "Api\Admin\BusinessController@create_ongoing_perk");
+    Route::post("claim-perk/{id}", "Api\Admin\BusinessController@claim_perk");
+    Route::post('/perks', "Api\Admin\BusinessController@getSortedPerks");
+    Route::get("claim-perk-list", "Api\Admin\BusinessController@claim_perk_list");
+    Route::get("saved-perk/{id}", "Api\Admin\BusinessController@saved_perk");
+    Route::get("saved-perk-list", "Api\Admin\BusinessController@saved_perk_list");
 
 });
 
@@ -85,10 +94,12 @@ Route::prefix('customer')->group(function () {
         route::post("offers", "Api\CustomerController@loyalty_offers");
 
         route::post("offers/search", "Api\CustomerController@loyalty_offers_search");
+         route::post("offers/business", "Api\CustomerController@loyalty_business_offers");
 
         route::post("customer_scheme_purchase", "Api\CustomerController@customer_scheme_purchase");
         route::post("offers/{id}", "Api\CustomerController@loyalty_offers_single");
         route::get("collect/offers", "Api\CustomerLoyaltyController@index");//wallet
+        Route::get('loyality_card',"Api\CustomerController@get_stamp_data");
 
         route::get('collect/offers/{id}', 'Api\CustomerLoyaltyController@single_offer');
         route::post('collect/offers/stamp', 'Api\CustomerLoyaltyController@increment_stamp');
@@ -102,6 +113,9 @@ Route::prefix('customer')->group(function () {
         Route::post("set_notification", "Api\SupportController@set_notification");
         Route::post('app_purchase_plan', "Api\CustomerController@app_purchase_plan");
         Route::post('app_purchase_plan_cancel', "Api\CustomerController@app_purchase_plan_cancel");
+
+        route::get("get-ads-banner", "Api\CustomerController@getAdsBanner");
+        route::get("ads-banner-click/{id}", "Api\CustomerController@clickAdsBanner");
     });
 
 });

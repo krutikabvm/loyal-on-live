@@ -28,6 +28,52 @@
         .pac-container {
             z-index: 10000 !important;
         }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 50px; /* Circular edges */
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            border-radius: 50px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+        }
+
+        /* When the switch is checked (enabled), change color to green */
+        input:checked + .slider {
+            background-color: #4CAF50; /* Green background */
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px); /* Move the slider to the right */
+        }
     </style>
     <div class="busines1-main">
 
@@ -256,9 +302,19 @@
                         </li>
 
                     </ul>
+                    <div class="form-group" style="display:flex;align-items:center;gap:4px">
+                    <label for="customSwitch" class="form-label">Admin Only</label>
+                        <label class="switch">
+                            <input type="checkbox" id="customSwitch" name="customSwitch" class="custom-toggle" checked="checked">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
 
+                    <!-- Perk Portal Button -->
+                    <div class="form-group">
+                        <a href="{{route('admin.business.deal')}}" class="btn btn-primary" id="perkPortalBtn" style="width:100%;font-weight:bold;padding: 10px;">Perks Portal</a>
+                    </div>
                 </div>
-
             </div>
 
 
@@ -266,6 +322,14 @@
             <div class="row">
 
                 <div class="col-md-6">
+                  <div class="form-group" style="display:flex;align-items:center;gap:4px">
+                    <label for="customSwitch" class="form-label">Hide Loyalty Dashboard</label>
+                      <label class="switch">
+                          <input type="checkbox" id="hideLoyaltyDashboard" name="hideLoyaltyDashboard" class="custom-toggle" {{$business_details->hide_loyalty_card == 1?'checked' : ''}} value="{{$business_details->hide_loyalty_card}}">
+                          <span class="slider round"></span>
+                      </label>
+                      <!-- <input type="checkbox" id="adminOnlySwitch" name="adminOnly"  data-toggle="toggle" data-on="Enabled" data-off="Disabled"> -->
+                  </div>
 
                     <div class="card-main">
 
@@ -1008,7 +1072,8 @@
                                    <form action="{{ route('admin.UpdateScheme') }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                         <input type="hidden" name="loyal_id" value="{{@$card->id}}">
-                                        <input type="hidden" name="business_id" value="{{@$business_details->id}}">
+                                        <input type="hidden"
+                                        id="business_id"  name="business_id" value="{{@$business_details->id}}">
                                         <div class="stamp-collect-text-main">
                                             <span class="stamp-tex">How many stamp does a customer need to collect to earn a reward? (a complete loyality card)</span>
                                             <div class="stamp-dropright">
@@ -1056,7 +1121,7 @@
                                         <div class="stamp-select-img-main">
                                             <div class="stamp-pad">
                                                 <div class="logo-text-main">
-                                                    <img id="newSchemebussiness_logo" src="{{url(@$business_details->image)}}" alt="logo">
+                                                    <img id="newSchemebussiness_logo" src="{{@$business_details->image != null ? url(@$business_details->image) :'' }}" alt="logo">
                                                     <span>Collect  &nbsp;</span><span id="stamp-collection">{{@$card->number_stamps}}&nbsp;</span> <span>stamp to Earn: </span><span id="stamp-description{{$key}}">
 
                                                         @if(@$card->description == 'other')
@@ -4203,7 +4268,27 @@ $(document).ready(function() {
     });
 
   });
- 
+  $('#hideLoyaltyDashboard').change(function () {
+        let isChecked = $(this).prop('checked') ? 1 : 0; // Convert boolean to integer (1 for checked, 0 for unchecked)
+
+        let business_id = $('#business_id').val();
+        console.log(business_id);
+
+        $.ajax({
+            url: '/admin/update-loyalty-dashboard', // Replace with your actual route
+            type: 'POST',
+            data: {
+                hideLoyaltyDashboard: isChecked,
+                business_id: business_id
+            },
+            success: function (response) {
+                console.log(response.message);
+            },
+            error: function (xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+  });
 
 
 </script>

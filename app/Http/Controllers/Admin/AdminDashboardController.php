@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
 use Session;
 use App\Models\UserAppSettings;
+use App\Models\LimitedPerks;
+
+
 class AdminDashboardController extends Controller
 {
     //get all business
@@ -1041,6 +1044,251 @@ if($count<3){
         return $result;
 
     }
+    public function create_limited_time_perk(){
+        $business = Business::select("business.id", "business.image", "business.business_name", "business.plan", "users.delete", "users.created_at", "users.account_status")
+            ->join("users", "business.user_id", "users.id")
+            ->where("users.account_status", "active")
+            ->where("users.type", 2)
+            ->where("users.delete", 0)
+            ->where("business.verify", "success")
+            ->orderby("business.id", "ASC")
+            ->get();
 
+        return view("limited_time_perk.create",compact('business'));
+    }
+
+    public function store_limited_time_perk(Request $request)
+    {
+        $validated = $request->validate([
+            'business_id' => 'required',
+            'description' => 'required|string|max:255',
+            'limit' => 'required|integer|min:1',
+            'setTime' => 'required|string',
+            'week_days' => 'nullable|array',  // week_days should be an array
+            'week_days.*' => 'in:Mon,Tue,Wed,Thu,Fri,Sat,Sun',
+            'date_range' => 'required|string|max:255',
+        ]);
+
+
+       $existingOngoingPerks = LimitedPerks::where('business_id', $request->business_id)
+       ->where('type', 'limited perk')
+       ->count();
+
+        if ($existingOngoingPerks >= 2) {
+            return back()->with('error', 'A business can have a maximum of 2 limited perks.');
+        }
+
+        $weekDays = $request->input('week_days');
+
+        if (!is_array($weekDays)) {
+            $weekDays = $weekDays ? [$weekDays] : []; // convert string to array
+        }
+        // Save data to the database
+        LimitedPerks::create([
+            'business_id' => $request->input('business_id'),
+            'description' => $request->input('description'),
+            'limit' => $request->input('limit'),
+            'setTime' => $request->input('setTime'),
+            'week_days' => implode(',', $weekDays),// Convert array to comma-separated string
+            'date_range' => $request->input('date_range'),
+            'minimum_spend' => $request->input('minimum_spend'),
+            'estimated_savings' => $request->input('estimated_savings'),
+            'terms' => $request->input('terms'),
+            'user_id' => Auth()->user()->id,
+            'type' => 'limited perk',
+            'pin' => $request->input('pin'),
+            'expiration_date' => $request->input('expiration_date')
+        ]);
+        return redirect()->route("admin.perks-portal");
+
+
+        // return back()->with('success', 'Form data saved successfully!');
+    }
+
+    public function update_limited_perk(Request $request,$id)
+    {
+        $validated = $request->validate([
+            'business_id' => 'required',
+            'description' => 'required|string|max:255',
+            'limit' => 'required|integer|min:1',
+            'setTime' => 'required|string',
+            'week_days' => 'nullable|array',  // week_days should be an array
+            'week_days.*' => 'in:Mon,Tue,Wed,Thu,Fri,Sat,Sun',
+            'date_range' => 'nullable|string|max:255',
+        ]);
+
+        $limitedPerk = LimitedPerks::find($id); // Replace $id with the ID of the record to update
+
+        if ($limitedPerk) {
+            $limitedPerk->update([
+                'business_id' => $request->input('business_id'),
+                'description' => $request->input('description'),
+                'limit' => $request->input('limit'),
+                'setTime' => $request->input('setTime'),
+                'week_days' => implode(',', $request->input('week_days')),// Convert array to comma-separated string
+                'date_range' => $request->input('date_range'),
+                'minimum_spend' => $request->input('minimum_spend'),
+                'estimated_savings' => $request->input('estimated_savings'),
+                'terms' => $request->input('terms'),
+                'user_id' => Auth()->user()->id,
+                'type' => 'limited perk',
+                'pin' => $request->input('pin'),
+                'expiration_date' => $request->input('expiration_date'),
+                'end_date' => NULL
+            ]);
+        }
+        return redirect()->route("admin.perks-portal");
+
+
+        // return back()->with('success', 'Form data saved successfully!');
+    }
+
+    public function create_ongoing_perk(){
+        $business = Business::select("business.id", "business.image", "business.business_name", "business.plan", "users.delete", "users.created_at", "users.account_status")
+        ->join("users", "business.user_id", "users.id")
+        ->where("users.account_status", "active")
+        ->where("users.type", 2)
+        ->where("users.delete", 0)
+        ->where("business.verify", "success")
+        ->orderby("business.id", "ASC")
+        ->get();
+        return view("ongoing_perk.create",compact('business'));
+    }
+
+
+    public function store_ongoing_perk(Request $request)
+    {
+        $validated = $request->validate([
+            'business_id' => 'required',
+            'description' => 'required|string|max:255',
+            'setTime' => 'required|string',
+            'week_days' => 'nullable|array',  // week_days should be an array
+            'week_days.*' => 'in:Mon,Tue,Wed,Thu,Fri,Sat,Sun'
+       ]);
+
+       $existingOngoingPerks = LimitedPerks::where('business_id', $request->business_id)
+       ->where('type', 'ongoing perk')
+       ->count();
+
+        if ($existingOngoingPerks >= 3) {
+            return back()->with('error', 'A business can have a maximum of 3 ongoing perks.');
+        }
+        $weekDays = $request->input('week_days');
+
+        if (!is_array($weekDays)) {
+            $weekDays = $weekDays ? [$weekDays] : []; // convert string to array
+        }
+
+        // Save data to the database
+        LimitedPerks::create([
+            'business_id' => $request->input('business_id'),
+            'description' => $request->input('description'),
+            'uses_per_month' => $request->input('uses_per_month'),
+            'setTime' => $request->input('setTime'),
+            'week_days' => implode(',', $weekDays),// Convert array to comma-separated string
+            'minimum_spend' => $request->input('minimum_spend'),
+            'estimated_savings' => $request->input('estimated_savings'),
+            'terms' => $request->input('terms'),
+            'user_id' => Auth()->user()->id,
+            'type' => 'ongoing perk',
+        ]);
+        return redirect()->route("admin.perks-portal");
+
+
+        // return back()->with('success', 'Form data saved successfully!');
+    }
+
+    public function update_ongoing_perk(Request $request,$id)
+    {
+        $validated = $request->validate([
+            'business_id' => 'required',
+            'description' => 'required|string|max:255',
+            'setTime' => 'required|string',
+            'week_days' => 'nullable|array',  // week_days should be an array
+            'week_days.*' => 'in:Mon,Tue,Wed,Thu,Fri,Sat,Sun'
+       ]);
+
+        // Save data to the database
+
+        $limitedPerk = LimitedPerks::find($id); // Replace $id with the ID of the record to update
+
+        if ($limitedPerk) {
+        
+            $limitedPerk->update([
+                'business_id' => $request->input('business_id'),
+                'description' => $request->input('description'),
+                'uses_per_month' => $request->input('uses_per_month'),
+                'setTime' => $request->input('setTime'),
+                'week_days' => implode(',', $request->input('week_days')), // Convert array to comma-separated string
+                'minimum_spend' => $request->input('minimum_spend'),
+                'estimated_savings' => $request->input('estimated_savings'),
+                'terms' => $request->input('terms'),
+                'user_id' => Auth()->user()->id,
+                'type' => 'ongoing perk',
+                'status' => 'Live',
+                'end_date' => NULL
+            ]);
+        }
+
+        return redirect()->route("admin.perks-portal");
+
+
+        // return back()->with('success', 'Form data saved successfully!');
+    }
+
+
+    public function edit_ongoing_perk($id){
+        $business = Business::select("business.id", "business.image", "business.business_name", "business.plan", "users.delete", "users.created_at", "users.account_status")
+        ->join("users", "business.user_id", "users.id")
+        ->where("users.account_status", "active")
+        ->where("users.type", 2)
+        ->where("business.verify", "success")
+        ->orderby("business.id", "ASC")
+        ->get();
+
+        $ongoingPerk = LimitedPerks::find($id);
+        if($ongoingPerk->type == 'ongoing perk'){
+            return view("ongoing_perk.edit",compact('business','ongoingPerk'));
+        }
+        else{
+            return view("limited_time_perk.edit",compact('business','ongoingPerk'));
+        }
+    }
+
+    public function limited_time_perk(){
+        $limitedPerks = LimitedPerks::with([
+            'perkUsers' => function ($query) {
+                $query->orderBy('created_at', 'desc'); // Order perkUsers in descending order
+            },
+            'business'
+        ])->latest()->withCount('perkUsers')->get();
+        return view("admin_dashboard.business_deal_portal",compact('limitedPerks'));
+    }
+
+    public function perk_portal(){
+        $limitedPerks = LimitedPerks::with([
+            'perkUsers' => function ($query) {
+                $query->orderBy('created_at', 'desc'); // Order perkUsers in descending order
+            },
+            'business'
+        ])->latest()->withCount('perkUsers')
+        ->get();
+        return view("admin_dashboard.perk_portal",compact('limitedPerks'));
+    }
+
+    public function end(Request $request)
+    {
+        $perk = LimitedPerks::findOrFail($request->perk_id);
+        $perk->update(['status' => 'ended',
+        'end_date' => Carbon::now()
+        ]); // or whatever your logic is
+        return back()->with('success', 'Perk ended successfully.');
+    }
+
+    public function fetchData($id)
+    {
+        $data = LimitedPerks::findOrFail($id); // Fetch the data based on ID
+        return response()->json($data); // Return data as JSON
+    }
 
 }

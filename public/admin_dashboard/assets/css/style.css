@@ -831,7 +831,7 @@ img{
 
     color: #000000;
 
-    margin-top: -16.5px;
+    margin-top: -20.5px;
 
 }
 
@@ -3274,10 +3274,32 @@ span.edit-plan {
     .custom-profile-right {
         max-width: 100%;
     }
+    .sm-hidden {
+        display: none;
+    }
+    .sm-flex{
+        display:flex!important;
+    }
 }
 
 
 @media screen and (max-width: 768px) {
+     .xs-hidden {
+        display: none!important;
+    }
+    .xs-flex{
+        display: flex!important;
+    }
+    .xs-justify-content{
+        justify-content:space-between!important
+    }
+
+    .xs-block{
+        display: block!important;
+    }
+    .xs-w-full{
+        width: 100% !important;
+    }
     .push-not-left {
     width: 100%;
     border: none;
