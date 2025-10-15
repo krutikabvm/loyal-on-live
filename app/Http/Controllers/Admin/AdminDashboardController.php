@@ -1291,4 +1291,18 @@ if($count<3){
         return response()->json($data); // Return data as JSON
     }
 
+    public function updateLoyaltyDashboard(Request $request)
+    {
+        $request->validate([
+            'hideLoyaltyCard' => 'required|boolean',
+        ]);
+
+        // Example: Update the setting in the database
+        $business = Business::find($request->business_id);
+        $business->hide_loyalty_card = $request->hideLoyaltyCard;
+        $business->save();
+
+        return response()->json(['message' => 'Loyalty card visibility updated successfully.']);
+    }
+
 }

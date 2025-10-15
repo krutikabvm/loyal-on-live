@@ -323,9 +323,9 @@
 
                 <div class="col-md-6">
                   <div class="form-group" style="display:flex;align-items:center;gap:4px">
-                    <label for="customSwitch" class="form-label">Hide Loyalty Dashboard</label>
+                    <label for="customSwitch" class="form-label">Hide Loyalty Card</label>
                       <label class="switch">
-                          <input type="checkbox" id="hideLoyaltyDashboard" name="hideLoyaltyDashboard" class="custom-toggle" {{$business_details->hide_loyalty_card == 1?'checked' : ''}} value="{{$business_details->hide_loyalty_card}}">
+                          <input type="checkbox" id="hideLoyaltyCard" name="hideLoyaltyCard" class="custom-toggle" {{$business_details->hide_loyalty_card == 1?'checked' : ''}} value="{{$business_details->hide_loyalty_card}}">
                           <span class="slider round"></span>
                       </label>
                       <!-- <input type="checkbox" id="adminOnlySwitch" name="adminOnly"  data-toggle="toggle" data-on="Enabled" data-off="Disabled"> -->
@@ -4268,7 +4268,7 @@ $(document).ready(function() {
     });
 
   });
-  $('#hideLoyaltyDashboard').change(function () {
+  $('#hideLoyaltyCard').change(function () {
         let isChecked = $(this).prop('checked') ? 1 : 0; // Convert boolean to integer (1 for checked, 0 for unchecked)
 
         let business_id = $('#business_id').val();
@@ -4278,7 +4278,7 @@ $(document).ready(function() {
             url: '/admin/update-loyalty-dashboard', // Replace with your actual route
             type: 'POST',
             data: {
-                hideLoyaltyDashboard: isChecked,
+                hideLoyaltyCard: isChecked,
                 business_id: business_id
             },
             success: function (response) {
