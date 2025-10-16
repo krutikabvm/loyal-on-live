@@ -563,7 +563,7 @@
                                             </div>
                                             @endif
                                             <div class="action-buttons">
-                                                @if($limitedPerk->perkStatus == 'ended')
+                                                @if($limitedPerk->status == 'ended')
                                                     <a class="btn edit" href="{{route('admin.edit_ongoing_perk',$limitedPerk->id)}}">Run Perk Again</a>
                                                 @else
                                                 <button class="btn preview openModalsButton" data-id="{{$limitedPerk->id}}"
@@ -624,7 +624,7 @@
                                         
                                         <div class="action-buttons">
 
-                                            @if($limitedPerk->perkStatus == 'ended')
+                                            @if($limitedPerk->status == 'ended')
                                             <a class="btn edit" style="border: 2px solid #03a9f4;background-color: white;color:#03a9f4;width:100%" href="{{route('admin.edit_ongoing_perk',$limitedPerk->id)}}">Run Perk Again</a>
                                             @else
                                             <!-- <button class="btn preview openModalsButton">Preview Perk</button> -->
@@ -715,7 +715,7 @@
                                                 </div>
                                             </div>
                                             <div class="action-buttons">
-                                                @if($limitedPerk->perkStatus == 'ended')
+                                                @if($limitedPerk->status == 'ended')
                                                     <a class="btn edit" href="{{route('admin.edit_ongoing_perk',$limitedPerk->id)}}">Run Perk Again</a>
                                                 @else  
                                                 <button class="btn preview openModalsButton" data-id="{{$limitedPerk->id}}"
@@ -756,7 +756,7 @@
                                         </div>
                                         
                                         <div class="action-buttons">
-                                            @if($limitedPerk->perkStatus == 'ended')
+                                            @if($limitedPerk->status == 'ended')
                                             <a class="btn edit" style="border: 2px solid #03a9f4;background-color: white;color:#03a9f4;width:100%" href="{{route('admin.edit_ongoing_perk',$limitedPerk->id)}}">Run Perk Again</a>
                                             @else
                                             @if($limitedPerk->perk_users_count == null && $limitedPerk->perk_users_count == 0)

@@ -993,6 +993,8 @@
             }
         }, function (start, end, label) {
             selectedText.textContent = `Selected Range: ${start.format('DD/M/Y hh:mm:00 A')} - ${end.format('DD/M/Y hh:mm:00 A')}`;
+            const formattedStart = start.format('DD/MM/YYYY hh:mm:ss A');
+            const formattedEnd = end.format('DD/MM/YYYY hh:mm:ss A');
             $('.expiration_date').val(formattedEnd);
 
             const dateRangePicker = $('.dateRange').data('daterangepicker');
@@ -1024,7 +1026,8 @@
 
             $('.timer').text(duration);
             $('#date-range-picker').val(duration);
-
+            console.log(duration);
+            $('.daterangepicker').css('display', 'none'); // Hide the picker after selection
         });
 
     // Show/hide calendar
