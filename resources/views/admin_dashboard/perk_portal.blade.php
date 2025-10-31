@@ -518,12 +518,21 @@
                                 <div class="xs-block" style="display:flex">
                                     <div class="perk-content xs-w-full" style="width:70%">
                                         <div class="logo-section">
-                                            @if($limitedPerk->business->image)
-                                            <div><img src="{{url('/'.$limitedPerk->business->image)}}" alt="Cafe Elite" class="perk-logo perk-{{$limitedPerk->perkStatus}}" ></div>
+                                            @if($limitedPerk->type == 'ongoing perk')
+                                                @if($limitedPerk->business->image)
+                                                <div><img src="{{url('/'.$limitedPerk->business->image)}}" alt="Cafe Elite" class="perk-logo perk-{{$limitedPerk->perkStatus}}" ></div>
+                                                @else
+                                                <div><img src="{{asset('admin_dashboard/assets/images/cafe.png') }}" class="perk-logo perk-{{$limitedPerk->perkStatus}}" alt="no img"></div>
+                                                @endif
+                                                <div class="status-badge {{$limitedPerk->perkStatus}}">{{ ucfirst($limitedPerk->perkStatus) }}</div>
                                             @else
-                                            <div><img src="{{asset('admin_dashboard/assets/images/cafe.png') }}" class="perk-logo perk-{{$limitedPerk->perkStatus}}" alt="no img"></div>
+                                                @if($limitedPerk->business->image)
+                                                <div><img src="{{url('/'.$limitedPerk->business->image)}}" alt="Cafe Elite" class="perk-logo perk-{{$limitedPerk->status}}" ></div>
+                                                @else
+                                                <div><img src="{{asset('admin_dashboard/assets/images/cafe.png') }}" class="perk-logo perk-{{$limitedPerk->status}}" alt="no img"></div>
+                                                @endif
+                                                <div class="status-badge {{$limitedPerk->status}}">{{ ucfirst($limitedPerk->status) }}</div>
                                             @endif
-                                            <div class="status-badge {{$limitedPerk->perkStatus}}">{{ ucfirst($limitedPerk->perkStatus) }}</div>
                                         </div>
                                         <div class="details-section">
                                             <p class="perk-end-time xs-flex xs-justify-content">Description<img src="{{asset('admin_dashboard\assets\images\preview.png')}}" class="openModalsButton hidden xs-block"  data-id="{{$limitedPerk->id}}"></p>
@@ -682,11 +691,11 @@
                                     <div class="perk-content xs-w-full" style="width:70%">
                                         <div class="logo-section">
                                             @if($limitedPerk->business->image)
-                                                <div><img src="{{url('/'.$limitedPerk->business->image)}}" alt="Cafe Elite" class="perk-logo perk-{{$limitedPerk->perkStatus}}" ></div>
+                                                <div><img src="{{url('/'.$limitedPerk->business->image)}}" alt="Cafe Elite" class="perk-logo perk-{{$limitedPerk->status}}" ></div>
                                                 @else
-                                                <div><img src="{{asset('admin_dashboard/assets/images/cafe.png') }}" class="perk-logo perk-{{$limitedPerk->perkStatus}}" alt="no img"></div>
+                                                <div><img src="{{asset('admin_dashboard/assets/images/cafe.png') }}" class="perk-logo perk-{{$limitedPerk->status}}" alt="no img"></div>
                                                 @endif
-                                                <div class="status-badge {{$limitedPerk->perkStatus}}">{{ ucfirst($limitedPerk->perkStatus) }}</div>
+                                                <div class="status-badge {{$limitedPerk->status}}">{{ ucfirst($limitedPerk->status) }}</div>
                                         </div>
                                         <div class="details-section">
                                             <p class="perk-end-time xs-flex xs-justify-content">Description<img src="{{asset('admin_dashboard\assets\images\preview.png')}}" class="openModalsButton hidden xs-block"  data-id="{{$limitedPerk->id}}"></p>
