@@ -888,6 +888,7 @@ class BusinessController extends BaseController
 
         $existingOngoingPerks = LimitedPerks::where('business_id', $request->business_id)
        ->where('type', 'limited perk')
+        ->where('status','!=','ended')
        ->count();
 
         if ($existingOngoingPerks >= 2) {
@@ -927,6 +928,7 @@ class BusinessController extends BaseController
 
         $existingOngoingPerks = LimitedPerks::where('business_id', $request->business_id)
         ->where('type', 'ongoing perk')
+        ->where('status','!=','ended')
         ->count();
 
          if ($existingOngoingPerks >= 3) {
