@@ -1135,6 +1135,7 @@ if($count<3){
                 'type' => 'limited perk',
                 'pin' => $request->input('pin'),
                 'expiration_date' => $request->input('expiration_date'),
+                'status'=> NULL,
                 'end_date' => NULL
             ]);
         }
