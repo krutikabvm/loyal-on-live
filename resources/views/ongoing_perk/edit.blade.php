@@ -778,6 +778,34 @@
         </div>
     </div>
 
+    @if(session('error'))
+    <!-- Bootstrap Error Modal -->
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {{ session('error') }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auto Open Modal Using jQuery -->
+    <script>
+        $(document).ready(function () {
+            $("#errorModal").modal('show');
+        });
+    </script>
+    @endif
     <div class="modal fade" id="timeModal" tabindex="-1" aria-labelledby="timeModalLabel" aria-hidden="false" aria-modal="true" role="dialog">
         <div class="modal-dialog modal-sm">
         <div class="modal-content">

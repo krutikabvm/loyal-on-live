@@ -1072,7 +1072,15 @@ if($count<3){
 
        $existingOngoingPerks = LimitedPerks::where('business_id', $request->business_id)
        ->where('type', 'limited perk')
-       ->where('status','!=','ended')
+       ->where(function ($query) {
+            $query->whereNull('status')
+            ->orwhere('status', 'live')
+                ->orWhere('status', '!=', 'ended');
+        })
+        ->get()
+        ->filter(function ($perk) {
+            return $perk->perk_status != 'ended'; 
+        })
        ->count();
 
         if ($existingOngoingPerks >= 2) {
@@ -1120,6 +1128,25 @@ if($count<3){
 
         $limitedPerk = LimitedPerks::find($id); // Replace $id with the ID of the record to update
 
+        if($limitedPerk->status == 'ended'){
+
+            $existingLimitedPerks = LimitedPerks::where('business_id', $request->business_id)
+                ->where('type', 'limited perk')
+                ->where(function ($query) {
+                        $query->whereNull('status')
+                        ->orWhere('status', 'live')
+                            ->orWhere('status', '!=', 'ended');
+                    })
+                    ->get() 
+                    ->filter(function ($perk) {
+                        return $perk->perk_status != 'ended'; 
+                    })
+                ->count();
+            if ($existingLimitedPerks >= 2) {
+                return back()->with('error', 'A business can have a maximum of 2 limited perks.');
+            }
+        } 
+
         if ($limitedPerk) {
             $limitedPerk->update([
                 'business_id' => $request->input('business_id'),
@@ -1135,7 +1162,7 @@ if($count<3){
                 'type' => 'limited perk',
                 'pin' => $request->input('pin'),
                 'expiration_date' => $request->input('expiration_date'),
-                'status'=> NULL,
+                'status'=> 'live',
                 'end_date' => NULL
             ]);
         }
@@ -1168,9 +1195,19 @@ if($count<3){
             'week_days.*' => 'in:Mon,Tue,Wed,Thu,Fri,Sat,Sun'
        ]);
 
+       
+
        $existingOngoingPerks = LimitedPerks::where('business_id', $request->business_id)
        ->where('type', 'ongoing perk')
-        ->where('status','!=','ended')
+       ->where(function ($query) {
+            $query->whereNull('status')
+                ->orWhere('status', 'live')
+                ->orWhere('status', '!=', 'ended');
+        })
+        ->get() 
+        ->filter(function ($perk) {
+            return $perk->perk_status != 'ended'; 
+        })
        ->count();
 
         if ($existingOngoingPerks >= 3) {
@@ -1210,10 +1247,29 @@ if($count<3){
             'week_days' => 'nullable|array',  // week_days should be an array
             'week_days.*' => 'in:Mon,Tue,Wed,Thu,Fri,Sat,Sun'
        ]);
+        $limitedPerk = LimitedPerks::find($id); // Replace $id with the ID of the record to update
 
+       if($limitedPerk->status == 'ended'){
+            $existingLimitedPerks = LimitedPerks::where('business_id', $request->business_id)
+        ->where('type', 'ongoing perk')
+        ->where(function ($query) {
+                $query->whereNull('status')
+                    ->orWhere('status', 'live')
+                    ->orWhere('status', '!=', 'ended');
+            })
+             ->get() 
+            ->filter(function ($perk) {
+                return $perk->perk_status != 'ended'; 
+            })
+        ->count();
+
+            if ($existingLimitedPerks >= 3) {
+                return back()->with('error', 'A business can have a maximum of 3 ongoing perks.');
+            }
+
+        }
         // Save data to the database
 
-        $limitedPerk = LimitedPerks::find($id); // Replace $id with the ID of the record to update
 
         if ($limitedPerk) {
         
@@ -1228,8 +1284,8 @@ if($count<3){
                 'terms' => $request->input('terms'),
                 'user_id' => Auth()->user()->id,
                 'type' => 'ongoing perk',
-                'status' => 'Live',
-                'end_date' => NULL
+                'status' => 'live',
+                'end_date' => NULL,
             ]);
         }
 
@@ -1249,7 +1305,9 @@ if($count<3){
         ->orderby("business.id", "ASC")
         ->get();
 
+        
         $ongoingPerk = LimitedPerks::find($id);
+
         if($ongoingPerk->type == 'ongoing perk'){
             return view("ongoing_perk.edit",compact('business','ongoingPerk'));
         }

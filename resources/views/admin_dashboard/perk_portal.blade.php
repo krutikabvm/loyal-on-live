@@ -518,21 +518,12 @@
                                 <div class="xs-block" style="display:flex">
                                     <div class="perk-content xs-w-full" style="width:70%">
                                         <div class="logo-section">
-                                            @if($limitedPerk->type == 'ongoing perk')
                                                 @if($limitedPerk->business->image)
                                                 <div><img src="{{url('/'.$limitedPerk->business->image)}}" alt="Cafe Elite" class="perk-logo perk-{{$limitedPerk->perkStatus}}" ></div>
                                                 @else
                                                 <div><img src="{{asset('admin_dashboard/assets/images/cafe.png') }}" class="perk-logo perk-{{$limitedPerk->perkStatus}}" alt="no img"></div>
                                                 @endif
                                                 <div class="status-badge {{$limitedPerk->perkStatus}}">{{ ucfirst($limitedPerk->perkStatus) }}</div>
-                                            @else
-                                                @if($limitedPerk->business->image)
-                                                <div><img src="{{url('/'.$limitedPerk->business->image)}}" alt="Cafe Elite" class="perk-logo perk-{{$limitedPerk->status}}" ></div>
-                                                @else
-                                                <div><img src="{{asset('admin_dashboard/assets/images/cafe.png') }}" class="perk-logo perk-{{$limitedPerk->status}}" alt="no img"></div>
-                                                @endif
-                                                <div class="status-badge {{$limitedPerk->status}}">{{ ucfirst($limitedPerk->status) }}</div>
-                                            @endif
                                         </div>
                                         <div class="details-section">
                                             <p class="perk-end-time xs-flex xs-justify-content">Description<img src="{{asset('admin_dashboard\assets\images\preview.png')}}" class="openModalsButton hidden xs-block"  data-id="{{$limitedPerk->id}}"></p>
@@ -572,7 +563,7 @@
                                             </div>
                                             @endif
                                             <div class="action-buttons">
-                                                @if($limitedPerk->status == 'ended')
+                                                @if($limitedPerk->perkStatus == 'ended')
                                                     <a class="btn edit" href="{{route('admin.edit_ongoing_perk',$limitedPerk->id)}}">Run Perk Again</a>
                                                 @else
                                                 <button class="btn preview openModalsButton" data-id="{{$limitedPerk->id}}"
@@ -633,7 +624,7 @@
                                         
                                         <div class="action-buttons">
 
-                                            @if($limitedPerk->status == 'ended')
+                                            @if($limitedPerk->perkStatus == 'ended')
                                             <a class="btn edit" style="border: 2px solid #03a9f4;background-color: white;color:#03a9f4;width:100%" href="{{route('admin.edit_ongoing_perk',$limitedPerk->id)}}">Run Perk Again</a>
                                             @else
                                             <!-- <button class="btn preview openModalsButton">Preview Perk</button> -->
@@ -691,11 +682,11 @@
                                     <div class="perk-content xs-w-full" style="width:70%">
                                         <div class="logo-section">
                                             @if($limitedPerk->business->image)
-                                                <div><img src="{{url('/'.$limitedPerk->business->image)}}" alt="Cafe Elite" class="perk-logo perk-{{$limitedPerk->status}}" ></div>
+                                                <div><img src="{{url('/'.$limitedPerk->business->image)}}" alt="Cafe Elite" class="perk-logo perk-{{$limitedPerk->perkStatus}}" ></div>
                                                 @else
-                                                <div><img src="{{asset('admin_dashboard/assets/images/cafe.png') }}" class="perk-logo perk-{{$limitedPerk->status}}" alt="no img"></div>
+                                                <div><img src="{{asset('admin_dashboard/assets/images/cafe.png') }}" class="perk-logo perk-{{$limitedPerk->perkStatus}}" alt="no img"></div>
                                                 @endif
-                                                <div class="status-badge {{$limitedPerk->status}}">{{ ucfirst($limitedPerk->status) }}</div>
+                                                <div class="status-badge {{$limitedPerk->perkStatus}}">{{ ucfirst($limitedPerk->perkStatus) }}</div>
                                         </div>
                                         <div class="details-section">
                                             <p class="perk-end-time xs-flex xs-justify-content">Description<img src="{{asset('admin_dashboard\assets\images\preview.png')}}" class="openModalsButton hidden xs-block"  data-id="{{$limitedPerk->id}}"></p>
@@ -724,7 +715,7 @@
                                                 </div>
                                             </div>
                                             <div class="action-buttons">
-                                                @if($limitedPerk->status == 'ended')
+                                                @if($limitedPerk->perkStatus == 'ended')
                                                     <a class="btn edit" href="{{route('admin.edit_ongoing_perk',$limitedPerk->id)}}">Run Perk Again</a>
                                                 @else  
                                                 <button class="btn preview openModalsButton" data-id="{{$limitedPerk->id}}"
@@ -765,7 +756,7 @@
                                         </div>
                                         
                                         <div class="action-buttons">
-                                            @if($limitedPerk->status == 'ended')
+                                            @if($limitedPerk->perkStatus == 'ended')
                                             <a class="btn edit" style="border: 2px solid #03a9f4;background-color: white;color:#03a9f4;width:100%" href="{{route('admin.edit_ongoing_perk',$limitedPerk->id)}}">Run Perk Again</a>
                                             @else
                                             @if($limitedPerk->perk_users_count == null && $limitedPerk->perk_users_count == 0)

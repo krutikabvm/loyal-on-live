@@ -79,6 +79,11 @@ class LimitedPerks extends Model
     public function getPerkStatusAttribute()
     {
         // Handle expiration_date if set
+
+        if($this->status == 'ended'){
+            return 'ended';
+        }
+        
         if (!empty($this->expiration_date)) {
             $expiration_date = trim($this->expiration_date);
 
