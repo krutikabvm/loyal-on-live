@@ -86,25 +86,21 @@ class LimitedPerks extends Model
         
         if (!empty($this->expiration_date)) {
             $expiration_date = trim($this->expiration_date);
-
-            if (preg_match('/\b(2[0-3]|1[0-9]):[0-5][0-9]:[0-5][0-9] (AM|PM|am|pm)\b/', $expiration_date)) {
-                $expiration_date = preg_replace('/ (AM|PM|am|pm)/', '', $expiration_date);
-            }
-
-            $dateTime = DateTime::createFromFormat('d/m/Y h:i:s A', $expiration_date) 
-                        ?: DateTime::createFromFormat('j/n/Y h:i:s A', $expiration_date) 
-                        ?: DateTime::createFromFormat('d/m/Y H:i:s', $expiration_date) 
-                        ?: DateTime::createFromFormat('j/n/Y H:i:s', $expiration_date);
-
-            if ($dateTime instanceof DateTime) {
-                $now = Carbon::now();
-
-                if ($now->gt($dateTime)) {
-                    return 'ended';
-                } elseif ($now->lt($dateTime)) {
-                    return 'live';
+                // Try parsing with Carbon using correct format
+                try {
+                    $dateTime = Carbon::createFromFormat('d/m/Y h:i:s a', $expiration_date,'Asia/Kolkata');
+                } catch (\Exception $e) {
+                    $dateTime = null;
                 }
-            }
+
+                if ($dateTime instanceof Carbon) {
+                    $now = Carbon::now('Asia/Kolkata');
+                    if ($now->greaterThan($dateTime)) {
+                        return 'ended';
+                    } elseif ($now->lessThan($dateTime)) {
+                        return 'live';
+                    }
+                }
 
             return 'scheduled';
         }
